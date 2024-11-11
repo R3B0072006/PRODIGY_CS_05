@@ -39,15 +39,15 @@ python network_packet_analyzer.py
 
 2. After this, you'll start seeing something like:
 
-Source IP: 192.168.1.2
-Destination IP: 192.168.1.1
-Protocol: TCP
-Payload: b'GET / HTTP/1.1\r\nHost: www.example.com\r\n'
+-Source IP: 192.168.1.2
+-Destination IP: 192.168.1.1
+-Protocol: TCP
+-Payload: b'GET / HTTP/1.1\r\nHost: www.example.com\r\n'
 --------------------------------------------------
-Source IP: 192.168.1.1
-Destination IP: 192.168.1.2
-Protocol: UDP
-Payload: b'UDP data packet'
+-Source IP: 192.168.1.1
+-Destination IP: 192.168.1.2
+-Protocol: UDP
+-Payload: b'UDP data packet'
 --------------------------------------------------
 
 
