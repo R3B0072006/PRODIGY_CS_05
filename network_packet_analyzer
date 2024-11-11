@@ -1,0 +1,32 @@
+from scapy.all import sniff, IP, TCP, UDP, ICMP
+
+# Function to handle each captured packet
+def packet_handler(packet):
+    if packet.haslayer(IP):  # Check if packet has an IP layer
+        source_ip = packet[IP].src
+        destination_ip = packet[IP].dst
+        protocol = packet[IP].proto
+        
+        # Get protocol name from the protocol number
+        if protocol == 6:
+            protocol_name = "TCP"
+        elif protocol == 17:
+            protocol_name = "UDP"
+        elif protocol == 1:
+            protocol_name = "ICMP"
+        else:
+            protocol_name = "Other"
+
+        # Displaying the packet details
+        print(f"Source IP: {source_ip}")
+        print(f"Destination IP: {destination_ip}")
+        print(f"Protocol: {protocol_name}")
+        
+        if packet.haslayer('Raw'):  # If packet has payload data (Raw layer)
+            payload = packet['Raw'].load
+            print(f"Payload: {payload}")
+        print('-' * 50)
+
+# Start sniffing packets, you can filter for specific protocols (like TCP or UDP)
+print("Starting packet sniffer...")
+sniff(prn=packet_handler, store=0, filter="ip")
