@@ -1,4 +1,5 @@
 # PRODIGY_CS_05
+Network Packet Analyzer
 ## Description
 A Network Packet Analyzer is a tool used to capture and analyze packets that flow through a network. It allows you to examine key information such as the source and destination IP addresses, the protocol used (e.g., TCP, UDP, ICMP), and the payload data carried by each packet. This tool can be used for network troubleshooting, security analysis, and learning about how networks operate.
 
